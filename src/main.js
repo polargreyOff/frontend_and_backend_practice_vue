@@ -1,5 +1,17 @@
 import { createApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-import router from './router'
+import HomeView from './views/HomeView.vue'
+import LibraryView from './views/LibraryView.vue'
 
-createApp(App).use(router).mount('#app')
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    { path: '/', component: HomeView },
+    { path: '/library', component: LibraryView }
+  ]
+})
+
+const app = createApp(App)
+app.use(router)
+app.mount('#app')

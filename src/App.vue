@@ -1,29 +1,38 @@
 <template>
   <div id="app">
     <header class="app-header">
-      <h1>Vue 3 Практика — Основы</h1>
+      <div class="header-content">
+        <div class="logo-section">
+          <svg class="vue-logo" width="40" height="40" viewBox="0 0 261.76 226.69">
+            <path d="M161.096.001l-30.224 52.351L100.647.001H-.005l130.877 226.688L261.749.001z" fill="#41b883"/>
+            <path d="M161.096.001l-30.224 52.351L100.647.001H52.346l78.526 136.01L209.398.001z" fill="#34495e"/>
+          </svg>
+          <h1>Vue Palette Generator</h1>
+        </div>
+        <p class="subtitle">Создавайте гармоничные цветовые схемы в стиле Vue</p>
+      </div>
     </header>
-
-    <nav class="navigation">
-      <router-link to="/reactive" class="nav-button">Пример 1: Реактивность</router-link>
-      <router-link to="/conditional" class="nav-button">Пример 2: Списки и условия</router-link>
-      <router-link to="/events" class="nav-button">Пример 3: События</router-link>
-      <router-link to="/usercards" class="nav-button">Пример 4: Компоненты и пропсы</router-link>
-      <router-link to="/searchexample" class="nav-button">Пример 5: Поиск и кастомные элементы</router-link>
-    </nav>
 
     <main class="main-content">
       <router-view />
     </main>
 
     <footer class="app-footer">
-      <p>Vue 3 + Vite • Практика 28</p>
+      <div class="footer-content">
+        <p>Vue 3 + Vite • Генератор палитр</p>
+        <p class="footer-links">
+          <a href="https://vuejs.org" target="_blank">Vue.js</a> • 
+          <a href="https://github.com" target="_blank">GitHub</a>
+        </p>
+      </div>
     </footer>
   </div>
 </template>
 
 <script>
-export default { name: 'App' }
+export default {
+  name: 'App'
+}
 </script>
 
 <style>
@@ -32,48 +41,65 @@ export default { name: 'App' }
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0f2f5 100%);
   color: #2c3e50;
+  line-height: 1.6;
 }
+
 #app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
+/* Header Styles */
 .app-header {
-  background: linear-gradient(135deg, #42b883 0%, #35495e 100%);
+  background: linear-gradient(135deg, #41b883 0%, #34495e 100%);
   color: white;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 10px rgba(52, 73, 94, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vue-logo {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
   text-align: center;
 }
-.navigation {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-}
-.nav-button {
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #42b883;
-  background-color: transparent;
-  color: #42b883;
-  border-radius: 25px;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-.nav-button:hover,
-.nav-button.router-link-active {
-  background-color: #42b883;
-  color: white;
-  transform: translateY(-2px);
-}
+
+/* Main Content */
 .main-content {
   flex: 1;
   padding: 2rem;
@@ -81,11 +107,103 @@ body {
   margin: 0 auto;
   width: 100%;
 }
+
+/* Footer */
 .app-footer {
-  background-color: #2c3e50;
+  background: #34495e;
   color: white;
-  text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: #41b883;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Utility Classes */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #41b883 0%, #3aa776 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3aa776 0%, #349a6b 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(65, 184, 131, 0.3);
+}
+
+.btn-secondary {
+  background: #34495e;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #2c3e50;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #41b883;
+  color: #41b883;
+}
+
+.btn-outline:hover {
+  background: #41b883;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
 }
 </style>
