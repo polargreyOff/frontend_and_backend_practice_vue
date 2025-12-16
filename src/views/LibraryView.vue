@@ -107,7 +107,7 @@
         
         <div class="palette-tags">
           <span class="tag type-tag">{{ getTypeLabel(palette.type) }}</span>
-          <span class="tag color-tag">{{ palette.colors.length }} цветов</span>
+          
         </div>
       </div>
     </div>

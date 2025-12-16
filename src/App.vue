@@ -3,13 +3,9 @@
     <header class="app-header">
       <div class="header-content">
         <div class="logo-section">
-          <svg class="vue-logo" width="40" height="40" viewBox="0 0 261.76 226.69">
-            <path d="M161.096.001l-30.224 52.351L100.647.001H-.005l130.877 226.688L261.749.001z" fill="#41b883"/>
-            <path d="M161.096.001l-30.224 52.351L100.647.001H52.346l78.526 136.01L209.398.001z" fill="#34495e"/>
-          </svg>
-          <h1>Vue Palette Generator</h1>
+          <h1>Palette Generator</h1>
         </div>
-        <p class="subtitle">Создавайте гармоничные цветовые схемы в стиле Vue</p>
+        
       </div>
     </header>
 
@@ -20,10 +16,6 @@
     <footer class="app-footer">
       <div class="footer-content">
         <p>Vue 3 + Vite • Генератор палитр</p>
-        <p class="footer-links">
-          <a href="https://vuejs.org" target="_blank">Vue.js</a> • 
-          <a href="https://github.com" target="_blank">GitHub</a>
-        </p>
       </div>
     </footer>
   </div>

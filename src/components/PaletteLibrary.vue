@@ -84,6 +84,7 @@ export default {
   max-height: 400px;
   overflow-y: auto;
   padding-right: 0.5rem;
+  padding: 10px 0;
 }
 
 .empty-library {

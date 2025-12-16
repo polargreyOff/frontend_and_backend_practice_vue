@@ -145,7 +145,7 @@
       </div>
       
       <div class="save-card card">
-        <h3>📚 Библиотека</h3>
+        <h3 class="library-link"><RouterLink to="/library">📚 Библиотека</RouterLink></h3>
         <PaletteLibrary 
           :palettes="savedPalettes"
           @load-palette="loadPalette"
@@ -170,6 +170,7 @@ import PaletteLibrary from './PaletteLibrary.vue'
 import { useColorPalette } from '../composables/useColorPalette'
 import { useLocalStorage } from '../composables/useLocalStorage'
 import { getContrastColor, copyToClipboard as copy } from '../composables/useColorUtils'
+import { RouterLink } from 'vue-router'
 
 export default {
   name: 'PaletteGenerator',
@@ -323,6 +324,10 @@ export default {
 </script>
 
 <style scoped>
+.library-link a {
+  text-decoration: none;
+  color: #34495e;
+}
 .palette-generator {
   display: flex;
   flex-direction: column;
