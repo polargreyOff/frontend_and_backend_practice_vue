@@ -5,7 +5,7 @@ import HomeView from './views/HomeView.vue'
 import LibraryView from './views/LibraryView.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/frontend_and_backend_practice_vue/'),
   routes: [
     { path: '/', component: HomeView },
     { path: '/library', component: LibraryView }
